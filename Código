@@ -1,0 +1,411 @@
+int a1 = 8;
+int b1 = 9;
+int c1 = 10;
+int d1 = 11;
+int e1 = 12;
+int f1 = 13;
+int g1 = A0;
+int p1 = A1;
+int t1 = A2;
+int t2 = A3;
+
+String binario1;
+String binario2;
+double decimal1;
+double decimal2;
+
+void cero() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(e1, HIGH); // E
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, LOW);
+  digitalWrite(t1, HIGH);
+  digitalWrite(t2, LOW);
+}
+
+void uno() {
+  digitalWrite(b1, HIGH); // A
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(t1, HIGH);
+  digitalWrite(t2, LOW); // F
+}
+
+void uno_punto() {
+  digitalWrite(b1, HIGH); // A
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(p1, HIGH); // C
+  digitalWrite(t2, HIGH);
+  digitalWrite(t1, LOW); // F
+}
+
+void unoC() {
+  digitalWrite(b1, HIGH); // A
+  digitalWrite(c1, HIGH); // C
+}
+
+void dos() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(e1, HIGH); // E
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void tres() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void cuatro() {
+  digitalWrite(b1, HIGH); // C
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void cinco() {
+  digitalWrite(a1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void seis() {
+  digitalWrite(a1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(e1, HIGH); // E
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void siete() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void ocho() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(d1, HIGH); // D
+  digitalWrite(e1, HIGH); // E
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void nueve() {
+  digitalWrite(a1, HIGH); // A
+  digitalWrite(b1, HIGH); // B
+  digitalWrite(c1, HIGH); // C
+  digitalWrite(e1, LOW);  // C
+  digitalWrite(d1, LOW);  // C
+  digitalWrite(f1, HIGH); // F
+  digitalWrite(g1, HIGH); // G
+  digitalWrite(t1, HIGH); // F
+  digitalWrite(t2, LOW);  // F
+}
+
+void apagarTodo() {
+  digitalWrite(a1, LOW); // A
+  digitalWrite(b1, LOW); // B
+  digitalWrite(c1, LOW); // C
+  digitalWrite(d1, LOW); // D
+  digitalWrite(e1, LOW); // E
+  digitalWrite(f1, LOW); // F
+  digitalWrite(g1, LOW); // G
+}
+
+
+void error(){
+  digitalWrite(a1,HIGH);//B
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,LOW);//F
+  digitalWrite(t2,HIGH);//F
+
+}
+
+void infinito(){
+  digitalWrite(f1,HIGH);//A
+  digitalWrite(a1,HIGH);//C
+  digitalWrite(b1,HIGH);//E
+  digitalWrite(g1,HIGH);//F
+  digitalWrite(t1,LOW);//F
+  digitalWrite(t2,HIGH);//F
+}
+
+void infinito2(){
+  digitalWrite(f1,HIGH);//A
+  digitalWrite(a1,HIGH);//C
+  digitalWrite(b1,HIGH);//E
+  digitalWrite(g1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+  digitalWrite(t1,HIGH);//F
+}
+
+
+void signo(){
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t2,HIGH);//F
+  digitalWrite(t1,LOW);
+}
+
+void cero_punto (){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(p1,HIGH);//F
+  digitalWrite(t2,HIGH);
+  digitalWrite(t1,LOW);
+
+}
+
+void mostrarNumero(int numero) {
+  switch (numero) {
+    case -1:   
+for (int i = 0; i < 400; i++) {
+        uno();  // Muestra "1" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+        delay(1);  // Espera 100 ms antes de mostrar "-"
+        signo();  // Muestra "-" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+      }
+      break;
+
+    case -2:
+for (int i = 0; i < 400; i++) {
+        dos();  // Muestra "1" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+        delay(1);  // Espera 100 ms antes de mostrar "-"
+        signo();  // Muestra "-" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+      }
+      break;
+
+    case -3: 
+for (int i = 0; i < 400; i++) {
+        tres();  // Muestra "1" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+        delay(1);  // Espera 100 ms antes de mostrar "-"
+        signo();  // Muestra "-" en el primer display
+        delay(1);  // Espera 100 ms antes de apagar
+        apagarTodo();  // Apaga ambos displays
+      }
+      break;
+
+    case 0: cero(); break;
+    case 1: uno(); break;
+    case 2: dos(); break;
+    case 3: tres(); break;
+    case 4: cuatro(); break;
+    case 5: cinco(); break;
+    case 6: seis(); break;
+    case 7: siete(); break;
+    case 8: ocho(); break;
+    case 9: nueve(); break;
+
+      
+  }
+}
+
+void setup() {
+  pinMode(a1, OUTPUT); // A
+  pinMode(b1, OUTPUT); // B
+  pinMode(c1, OUTPUT); // C
+  pinMode(d1, OUTPUT); // D
+  pinMode(e1, OUTPUT); // E
+  pinMode(f1, OUTPUT); // F
+  pinMode(g1, OUTPUT); // G
+  pinMode(p1, OUTPUT); // Punto
+  pinMode(t1, OUTPUT); // Tierra 1
+  pinMode(t2, OUTPUT); // Tierra 2
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Programa: Ingresa el primer número binario de 2 dígitos:");
+  while (Serial.available() == 0);
+  String binario1 = Serial.readStringUntil('\n');
+  Serial.println("El primer número es: " + binario1);
+
+  Serial.println("Programa: Ingresa el segundo número binario de 2 dígitos:");
+  while (Serial.available() == 0);
+  String binario2 = Serial.readStringUntil('\n');
+  Serial.println("El segundo número es: " + binario2);
+
+  // Verifica si los números binarios son válidos
+  if ((binario1 == "00" || binario1 == "01" || binario1 == "10" || binario1 == "11") &&
+      (binario2 == "00" || binario2 == "01" || binario2 == "10" || binario2 == "11")) {
+    // Convierte los números binarios en decimales
+    double decimal1 = (binario1.charAt(0) - '0') * 2 + (binario1.charAt(1) - '0');
+    double decimal2 = (binario2.charAt(0) - '0') * 2 + (binario2.charAt(1) - '0');
+
+    Serial.println("Programa: Ingresa la operación (+, -, *, /, AND, OR, XOR):");
+    while (Serial.available() == 0);
+    String operador = Serial.readStringUntil('\n');
+
+    if ((binario2 == "00" && (binario1 == "01" || binario1 == "10" || binario1 == "11")) && operador == "/" ||
+          (binario2 != "00" && decimal2 == 0 && decimal1 / decimal2 == -1) && operador == "/") {
+        // Controla la división por cero y muestra el resultado de infinito
+        Serial.println ("Programa: Error, número infinito.");
+        for (int i = 0; i < 400; i++) {
+          apagarTodo();
+          delay(1);
+          infinito();
+          delay(1);
+          apagarTodo();
+          infinito2();
+          delay(1);
+          apagarTodo();
+        }
+
+      }
+
+        if (binario1 == "00" && binario2 == "00" && operador=="/") {
+        // Ambos números son 00, muestra el mensaje de error
+        Serial.println("Programa: Error, división por cero.");
+        for (int i = 0; i < 400; i++) {
+        apagarTodo();
+        delay(1);
+        error(); 
+        delay(1);
+        apagarTodo();
+        }
+      
+  }
+
+
+    double resultado = 0.0;
+
+    if (operador == "+") {
+      resultado = decimal1 + decimal2;
+    } else if (operador == "-") {
+      resultado = decimal1 - decimal2;
+    } else if (operador == "*") {
+      resultado = decimal1 * decimal2;
+    } else if (operador == "/") {
+      if (decimal2 != 0 ) {
+        resultado = decimal1 / decimal2;
+      } else {
+        return;  // Salir del loop si hay error
+      }
+    } else if (operador == "AND" || operador == "and") {
+      if (binario1 == "11" && binario2 == "11") {
+        resultado = 1;
+      }
+    } else if (operador == "OR" || operador == "or") {
+      if ((binario1 =="11" && binario2 =="11") || (binario1== "00" && binario2== "00")) {
+        resultado = 0;
+      } else {
+        resultado = 1;
+      }
+    } else if (operador == "XOR" || operador == "xor") {
+      if ((binario1 == "00" && binario2 == "01") || (binario1 == "00" && binario2 == "10") || (binario1 == "01" && binario2 == "00") || (binario1 == "01" && binario2 == "11") || (binario1 == "10" && binario2 == "00") || (binario1 == "10" && binario2 == "11") || (binario1 == "11" && binario2 == "01") || (binario1 == "11" && binario2 == "10")) {
+        resultado = 1;
+      } else {
+        resultado = 0;
+      }
+    } else {
+      Serial.println("Programa: Operador no reconocido. Utiliza '+', '-', '*', '/', 'AND', 'OR' o 'XOR'.");
+      return;  // Salir del loop si hay error
+    }
+
+  if (resultado == 1.50){
+      for (int i = 0; i < 400; i++) {
+      apagarTodo();
+      delay(1);
+      uno_punto();
+      delay(1);
+      apagarTodo();
+      cinco();
+      delay(1);
+      }
+    } 
+
+    
+  if (resultado == 0.33333333333333333){
+      for (int i = 0; i < 400; i++) {
+      apagarTodo();
+      delay(1);
+      cero_punto();
+      delay(1);
+      apagarTodo();
+      tres();
+      delay(1);
+      }
+    }     
+
+    if (resultado == 0.66666666666666666){
+      for (int i = 0; i < 400; i++) {
+      apagarTodo();
+      delay(1);
+      cero_punto();
+      delay(1);
+      apagarTodo();
+      seis();
+      delay(1);
+      }
+    }   
+
+      if (resultado == 0.5){
+      for (int i = 0; i < 400; i++) {
+      apagarTodo();
+      delay(1);
+      cero_punto();
+      delay(1);
+      apagarTodo();
+      cinco();
+      delay(1);
+      }
+    }
+
+    Serial.print("El resultado es: ");
+    Serial.println(resultado);
+
+    apagarTodo();
+    delay(1000);
+
+    // Muestra el resultado en los displays de siete segmentos
+    mostrarNumero(resultado);
+    delay(1000);
+
+    apagarTodo();
+    delay(1000);
+  } else {
+    Serial.println("Programa: Ingresa valores binarios válidos (00, 01, 10 o 11).");
+  }
+}
